@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string.h>
-
+//prueba desde rama secundaria
 using namespace std;
 
 string strprt(string,int,int);
