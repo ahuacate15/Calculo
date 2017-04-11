@@ -1,12 +1,17 @@
 using namespace std;
 class Termino {
-	public:
-		//seleccionar parte de una cadena			
+	public:			
+		//atributos de la clase
+		char signo;
+		int numerica;
+		string literal;
+		int potencia;
+		//metodos y funciones
 		string strprt(string,int,int);
-		//buscar un caracter en la cadena, -1 cuando no encuentra resultados
+		//busca un caracter en la cadena :: retorna -1 si no hay resultados
 		int strfnd(string,char);
-		//divide la ecuacion en 2 lados
 		vector<string> separar(string);
-		//divide el miembro de la ecuacion en terminos
 		vector<string> terminos(string);
+		//convierte un string a un termino algebraico		
+		void convertir(string);
 };

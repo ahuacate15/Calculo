@@ -72,5 +72,38 @@ vector<string> Termino::separar(string expresion){
 	}
 }
 
+//convierte un string a un termino
+void Termino::convertir(string termino){
+	int posicion = 0;
+	string numero, literal, potencia;
+	//identificando signo
+	if(termino[0] != '+' && termino[0] != '-')
+		Termino::signo = '+';
+	else
+		Termino::signo = termino[0];
+	//identificando parte numérica	
+	for(int i=0; i<termino.length(); i++){
+		if(termino[i] == '^')
+			posicion = i;
+		else if(posicion == 0){
+			if(termino[i] >= '0' && termino[i] <= '9')
+				numero += termino[i];	
+			if(termino[i] >= 'a' && termino[i] <= 'z')
+				literal += termino[i];
+		}
+		//capturando potencia
+		if(posicion != 0){
+			if(posicion != i)
+				potencia += termino[i];
+			//identifica el limite de la potencia
+			if(termino[i+1] == '+' || termino[i+1] == '-' || termino[i+1] == '*' || termino[i+1] == '/'){
+				posicion = 0;
+			}		
+		}
+	}
+	cout << "Parte numerica: " << numero << endl;
+	cout << "Parte literal: " << literal << endl;
+	cout << "Potencia: " << potencia << endl;
+}
 
 
