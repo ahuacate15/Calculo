@@ -12,10 +12,14 @@ int main(){
 	string ecuacion;
 	cout << "Digite ecuacion: ";
 	cin >> ecuacion;
+	t.convertir(ecuacion);
+	cout << "Signo: " << t.signo << endl;
+/*
 	terminos = t.separar(ecuacion);
 	for(int i=0; i<terminos.size(); i++){
 		cout << terminos[i] << endl;
 	}
+*/
 	return 0;
 }
 
