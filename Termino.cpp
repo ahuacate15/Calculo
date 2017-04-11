@@ -1,8 +1,15 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <cstdlib>
 #include "Termino.h"
 using namespace std;
+
+Termino::Termino(){
+	signo = '+';
+	numerica = 1;
+	potencia = 1;
+}
 
 //obtener una parte de la cadena
 string Termino::strprt(string cadena, int inicio, int fin){
@@ -101,9 +108,11 @@ void Termino::convertir(string termino){
 			}		
 		}
 	}
-	cout << "Parte numerica: " << numero << endl;
-	cout << "Parte literal: " << literal << endl;
-	cout << "Potencia: " << potencia << endl;
+	if(numero != "")
+		Termino::numerica = atoi(numero.c_str());
+	if(potencia != "")
+		Termino::potencia = atoi(potencia.c_str());
+	Termino::literal = literal;
 }
 
 

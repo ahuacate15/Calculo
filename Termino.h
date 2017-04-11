@@ -6,6 +6,7 @@ class Termino {
 		int numerica;
 		string literal;
 		int potencia;
+		Termino();
 		//metodos y funciones
 		string strprt(string,int,int);
 		//busca un caracter en la cadena :: retorna -1 si no hay resultados
